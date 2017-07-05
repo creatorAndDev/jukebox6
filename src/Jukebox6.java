@@ -1,9 +1,5 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.io.*;
+import java.util.*;
 
 public class Jukebox6 {
 	ArrayList<Song> songList = new ArrayList<Song>();
@@ -14,14 +10,16 @@ public class Jukebox6 {
 	
 	public void go(){
 		getSongs();
-		System.out.println("До сортировки: " + songList);
+		System.out.println("Без сортировки: " + songList);
+		System.out.println("---");
 
 		Collections.sort(songList);
-		System.out.println("После сортировки: " + songList);
+		System.out.println("Сортировка A-Z: " + songList);
+		System.out.println("---");
 		
 		HashSet<Song> songSet = new HashSet<Song>();
 		songSet.addAll(songList);
-		System.out.println("После сортировки, без дубликатов: " + songList);
+		System.out.println("Без дубликатов: " + songSet);
 	}
 	void getSongs(){
 		try{
