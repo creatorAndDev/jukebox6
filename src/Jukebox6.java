@@ -7,20 +7,21 @@ import java.util.HashSet;
 
 public class Jukebox6 {
 	ArrayList<Song> songList = new ArrayList<Song>();
+	
 	public static void main(String[] args) {
 		new Jukebox6().go();
 	}
 	
 	public void go(){
 		getSongs();
-		System.out.println(songList);
+		System.out.println("До сортировки: " + songList);
 
 		Collections.sort(songList);
-		System.out.println(songList);
+		System.out.println("После сортировки: " + songList);
 		
 		HashSet<Song> songSet = new HashSet<Song>();
 		songSet.addAll(songList);
-		System.out.println(songList);
+		System.out.println("После сортировки, без дубликатов: " + songList);
 	}
 	void getSongs(){
 		try{
@@ -32,7 +33,7 @@ public class Jukebox6 {
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
-			System.out.println("Ошибка в загрзук файла");
+			System.out.println("Ошибка в загрзуки файла");
 		}
 	}
 	void addSong(String lineToParse){
